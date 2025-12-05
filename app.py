@@ -1,11 +1,15 @@
 # app.py  — Streamlit dashboard for Flood & Weather Insights
-import streamlit as st # type: ignore
+import streamlit as st  # type: ignore
 import requests
 import pandas as pd
 from datetime import datetime
+import os  # <--- IMPORTANT
 
-# Default backend URL (change if you deployed backend elsewhere)
-DEFAULT_BACKEND = "http://127.0.0.1:8000"
+# Default backend URL:
+# - On Streamlit Cloud → takes BACKEND_URL from environment
+# - On your laptop      → falls back to localhost:8000
+DEFAULT_BACKEND = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
+
 
 st.set_page_config(page_title="Flood Risk Insights Dashboard", layout="wide")
 
@@ -100,3 +104,4 @@ if fetch_button:
 else:
     st.info("Enter a city and click **Get Forecast** in the sidebar to retrieve data from your backend.")
     st.caption("Make sure your FastAPI backend is running (uvicorn on port 8000) and the Backend URL is correct.")
+
