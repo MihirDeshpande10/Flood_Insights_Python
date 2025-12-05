@@ -8,7 +8,8 @@ import os  # <--- IMPORTANT
 # Default backend URL:
 # - On Streamlit Cloud → takes BACKEND_URL from environment
 # - On your laptop      → falls back to localhost:8000
-DEFAULT_BACKEND = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
+DEFAULT_BACKEND = "https://flood-insights-python.onrender.com"
+
 
 
 st.set_page_config(page_title="Flood Risk Insights Dashboard", layout="wide")
