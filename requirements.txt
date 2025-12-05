@@ -1,0 +1,7 @@
+fastapi==0.95.2
+uvicorn[standard]==0.22.0
+httpx==0.24.0
+pandas==2.2.2
+twilio==8.0.0
+streamlit==1.37.0
+requests==2.31.0
